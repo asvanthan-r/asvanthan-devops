@@ -31,13 +31,14 @@ jobs:
         with:
           projectBaseDir: app
         env:
-          SONAR_TOKEN: ${{sqp_781fb0a0b6f1bf06d61cded18af72b5768eb48b3}}
-          SONAR_HOST_URL: ${{ http://20.119.97.42:9000/ }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
       - name: SonarQube Quality Gate
         uses: SonarSource/sonarqube-quality-gate-action@v1
         with:
           scanMetadataReportFile: app/.scannerwork/report-task.txt
         env:
-          SONAR_TOKEN: ${{sqp_781fb0a0b6f1bf06d61cded18af72b5768eb48b3}}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
 
 
