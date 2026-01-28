@@ -5,8 +5,8 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
-# ❌ Hard-coded secret
-DB_PASSWORD = "admin123"
+def secure_function(user_input):
+    print(user_input)
 
 @app.route("/user")
 def get_user():
